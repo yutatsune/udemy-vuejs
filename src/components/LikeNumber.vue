@@ -20,3 +20,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+/* そのままだと全てのdivタグに適用されてしまうため、scopedをつける */
+  div {
+    border: 1px solid red;
+  }
+</style>

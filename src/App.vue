@@ -23,3 +23,10 @@ export default {
 };
 で読み込む */
 </script>
+
+<style scoped>
+/* そのままだと全てのdivタグに適用されてしまうため、scopedをつける */
+  div {
+    border: 1px solid blue;
+  }
+</style>
