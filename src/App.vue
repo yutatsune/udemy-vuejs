@@ -1,8 +1,10 @@
 <template>
   <div>
     <LikeHeader></LikeHeader>
-    <LikeNumber></LikeNumber>
-    <!-- ./LikeNumber.vueの内容を表示している -->
+    <h2>{{ number }}</h2>
+    <LikeNumber :number="number"></LikeNumber>
+    <LikeNumber :number="number"></LikeNumber>
+    <!-- propsでデータを渡すには、v-bindで属性を指定する必要がある -->
   </div>
 </template>
 
@@ -10,6 +12,11 @@
 import LikeHeader from "./components/LikeHeader.vue";
 
 export default {
+  data() {
+    return {
+      number: 10
+    };
+  },
   components: {
     LikeHeader
   }
