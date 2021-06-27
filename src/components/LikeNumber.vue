@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>いいね({{ number / 2 }})</p>
+    <p>いいね({{ totalNumber / 2 }})</p>
     <button @click='increment'>+1</button>
     <!-- templateはルート要素を一つにしなければならない（div要素などで囲む） -->
   </div>
@@ -8,8 +8,9 @@
 
 <script>
 export default {
-  props: ["number"],
+  props: ["totalNumber"],
   /* 親から子にデータを渡すにはpropsを使う */
+  /* JSの属性値はキャメルケースを使う */
   methods: {
     increment() {
       this.number += 1;

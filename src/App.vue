@@ -2,8 +2,9 @@
   <div>
     <LikeHeader></LikeHeader>
     <h2>{{ number }}</h2>
-    <LikeNumber :number="number"></LikeNumber>
-    <LikeNumber :number="number"></LikeNumber>
+    <LikeNumber :total-number="number"></LikeNumber>
+    <LikeNumber :total-number="number"></LikeNumber>
+    <!-- HTMLの属性値はケバブケースを使う -->
     <!-- propsでデータを渡すには、v-bindで属性を指定する必要がある -->
   </div>
 </template>
