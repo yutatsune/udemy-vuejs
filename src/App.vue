@@ -2,7 +2,7 @@
   <div>
     <LikeHeader></LikeHeader>
     <h2>{{ number }}</h2>
-    <LikeNumber :total-number="number"></LikeNumber>
+    <LikeNumber :total-number="number" @my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="number"></LikeNumber>
     <!-- HTMLの属性値はケバブケースを使う -->
     <!-- propsでデータを渡すには、v-bindで属性を指定する必要がある -->
@@ -20,6 +20,11 @@ export default {
   },
   components: {
     LikeHeader
+  },
+  methods: {
+    incrementNumber(value) {
+      this.number = value;
+    }
   }
 };
 /* シングルファイルコンポーネントをローカル登録するには、
