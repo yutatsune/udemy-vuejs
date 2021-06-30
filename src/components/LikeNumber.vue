@@ -25,6 +25,7 @@ export default {
   methods: {
     increment() {
       this.$emit("my-click", this.totalNumber + 1);
+      /* $emitは親コンポーネントのイベントを発火させるもの */
     }
   }
 };
