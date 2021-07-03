@@ -6,6 +6,7 @@
     <LikeNumber :total-number="number"></LikeNumber>
     <!-- HTMLの属性値はケバブケースを使う -->
     <!-- propsでデータを渡すには、v-bindで属性を指定する必要がある -->
+    <!-- $emitで作るカスタムイベントはケバブケースを使う(JSで使われるタイミングが皆無) -->
   </div>
 </template>
 
@@ -24,6 +25,7 @@ export default {
   methods: {
     incrementNumber(value) {
       this.number = value;
+      /* $emitが発火したタイミングで親が親の値を変更している（子が親を変更できない） */
     }
   }
 };
