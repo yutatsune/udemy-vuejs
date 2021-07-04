@@ -3,15 +3,19 @@
     <LikeHeader>
       <h2>みなさん</h2>
       <!-- templateタグに囲われていないものはデフォルトのslotに格納される -->
-      <template v-slot:title>
+      <template v-slot:title="slotProps">
         <!-- 違うslotを複数箇所に適用するにはv-slotを使う -->
         <h2>こんにちは</h2>
+        <h2>{{ slotProps.user.firstName }}</h2>
+        <!-- slotPropsによって小コンポーネントの値をとることができる -->
       </template>
       <h3>はじめまして</h3>
       <p>よろしくお願いします</p>
       <template v-slot:number>
         <h2>{{ number }}</h2>
       </template>
+      <!-- v-slot:[]でスロット名を動的に書くことができる -->
+      <!-- v-slotの省略記法は# -->
     </LikeHeader>
     <LikeNumber :total-number="number" @my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="number"></LikeNumber>

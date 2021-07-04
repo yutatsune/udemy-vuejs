@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot name="title">
+    <slot name="title" :user="user" text="text">
       <!-- v-slotの名前をname属性で記述するとそのslotを適用できる(名前付きスロット) -->
 <!--       <h2>デフォルトのタイトル</h2>
       slotはフォールバックコンテンツを配置できる -->
@@ -14,3 +14,16 @@
     <!-- 親と子それぞれに定義されている値にはslotであってもアクセスできない(CSSを除く) -->
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      user: {
+        firstName: "Jack",
+        lastName: "Donald"
+      }
+    };
+  }
+};
+</script>
