@@ -1,10 +1,18 @@
 <template>
   <div>
     <LikeHeader>
-      <h1>トータルのいいね数</h1>
-      <h2>{{ number }}</h2>
+      <h2>みなさん</h2>
+      <!-- templateタグに囲われていないものはデフォルトのslotに格納される -->
+      <template v-slot:title>
+        <!-- 違うslotを複数箇所に適用するにはv-slotを使う -->
+        <h2>こんにちは</h2>
+      </template>
+      <h3>はじめまして</h3>
+      <p>よろしくお願いします</p>
+      <template v-slot:number>
+        <h2>{{ number }}</h2>
+      </template>
     </LikeHeader>
-    <h2>{{ number }}</h2>
     <LikeNumber :total-number="number" @my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="number"></LikeNumber>
     <!-- HTMLの属性値はケバブケースを使う -->
